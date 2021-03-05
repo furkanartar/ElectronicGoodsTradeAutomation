@@ -1,4 +1,4 @@
-﻿namespace Core.Utilities.Results.Abstract
+﻿namespace Core.Utilities.Results
 {
     /// <summary>
     /// Result yapısının base interface'i.

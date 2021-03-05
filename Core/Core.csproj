@@ -5,9 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="DataAccess\" />
-    <Folder Include="Utilities\Results\Abstract\" />
-    <Folder Include="Utilities\Results\Concrete\" />
+    <Folder Include="DataAccess\EntityFramework\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.3" />
   </ItemGroup>
 
 </Project>

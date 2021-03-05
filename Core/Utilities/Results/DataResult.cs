@@ -1,6 +1,6 @@
-﻿using Core.Utilities.Results.Abstract;
+﻿using Core.Utilities.Results;
 
-namespace Core.Utilities.Results.Concrete
+namespace Core.Utilities.Results
 {
     /// <summary>
     /// DataResult yapısının base class'ı.

@@ -1,4 +1,4 @@
-﻿namespace Core.Utilities.Results.Concrete
+﻿namespace Core.Utilities.Results
 {
     /// <summary>
     /// Geri dönüş tipi IDataResult ise ve durum başarısızsa bu class return edilir.

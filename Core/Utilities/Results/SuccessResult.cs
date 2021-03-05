@@ -1,4 +1,6 @@
-﻿namespace Core.Utilities.Results.Concrete
+﻿using Core.Utilities.Results;
+
+namespace Core.Utilities.Results
 {
     /// <summary>
     /// Geri dönüş tipi IResult ise ve durum başarılıysa bu class return edilir.

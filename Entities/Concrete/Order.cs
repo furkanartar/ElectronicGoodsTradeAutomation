@@ -1,7 +1,7 @@
 ﻿using System;
 using Core.Entities;
 
-namespace Entities
+namespace Entities.Concrete
 {
     public class Order : IEntity
     {
