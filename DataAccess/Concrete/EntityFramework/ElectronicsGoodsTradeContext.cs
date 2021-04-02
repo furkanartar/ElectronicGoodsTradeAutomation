@@ -7,7 +7,7 @@ namespace DataAccess.Concrete.EntityFramework
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Server=ASOSYAL-W\SQLEXPRESS;Database=ElectronicsGoodsTrade;Trusted_Connection=True;");
+            optionsBuilder.UseSqlServer(@"Server=DESKTOP-5IHA6IN\SQLEXPRESS;Database=ElectronicsGoodsTrade;Trusted_Connection=True;");
         }
 
         public DbSet<Category> Categories { get; set; }

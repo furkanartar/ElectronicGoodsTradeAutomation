@@ -4,6 +4,7 @@ using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System.Collections.Generic;
+using Core.Utilities.Business;
 
 namespace Business.Concrete
 {
@@ -18,6 +19,13 @@ namespace Business.Concrete
 
         public IResult Add(Product product)
         {
+            IResult result = BusinessRules.Run();
+
+            if (result != null)
+            {
+                return result;
+            }
+
             _productDal.Add(product);
             return new SuccessResult(Messages.Added);
         }
