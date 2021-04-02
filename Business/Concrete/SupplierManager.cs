@@ -19,30 +19,30 @@ namespace Business.Concrete
         public IResult Add(Supplier supplier)
         {
             _supplierDal.Add(supplier);
-            return new SuccessResult(Messages.Added);
+            return new SuccessResult(Messages.Suppliers.Add(supplier.CompanyName));
         }
         public IResult Update(Supplier supplier)
         {
             var result = _supplierDal.Get(s => s.Id == supplier.Id);
             _supplierDal.Update(result);
-            return new SuccessResult(Messages.Updated);
+            return new SuccessResult(Messages.Suppliers.Update(supplier.CompanyName));
         }
 
         public IResult Delete(Supplier supplier)
         {
             var result = _supplierDal.Get(s => s.Id == supplier.Id);
             _supplierDal.Delete(result);
-            return new SuccessResult(Messages.Deleted);
+            return new SuccessResult(Messages.Suppliers.Delete(supplier.CompanyName));
         }
 
         public IDataResult<List<Supplier>> GetAll()
         {
-            return new SuccessDataResult<List<Supplier>>(_supplierDal.GetAll(), Messages.Listed);
+            return new SuccessDataResult<List<Supplier>>(_supplierDal.GetAll());
         }
 
         public IDataResult<Supplier> GetById(int SupplierId)
         {
-            return new SuccessDataResult<Supplier>(_supplierDal.Get(s => s.Id == SupplierId), Messages.Listed);
+            return new SuccessDataResult<Supplier>(_supplierDal.Get(s => s.Id == SupplierId));
         }
     }
 }

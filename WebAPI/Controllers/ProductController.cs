@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
@@ -54,7 +55,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-
+        [Authorize(Roles = "Admin")]
         [HttpGet("getall")]
         public IActionResult GetAll()
         {

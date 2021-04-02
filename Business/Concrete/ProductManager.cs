@@ -27,30 +27,30 @@ namespace Business.Concrete
             }
 
             _productDal.Add(product);
-            return new SuccessResult(Messages.Added);
+            return new SuccessResult(Messages.Products.Add(product.ProductName));
         }
 
         public IResult Update(Product product)
         {
             var result = _productDal.Get(p => p.Id == product.Id);
             _productDal.Update(result);
-            return new SuccessResult(Messages.Updated);
+            return new SuccessResult(Messages.Products.Update(product.ProductName));
         }
 
         public IResult Delete(Product product)
         {
             _productDal.Delete(product);
-            return new SuccessResult(Messages.Deleted);
+            return new SuccessResult(Messages.Products.Delete(product.ProductName));
         }
 
         public IDataResult<List<Product>> GetAll()
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll(), Messages.Listed);
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll());
         }
 
         public IDataResult<Product> GetById(int ProductId)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == ProductId), Messages.Listed);
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == ProductId));
         }
     }
 }
