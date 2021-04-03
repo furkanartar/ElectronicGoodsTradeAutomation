@@ -1,7 +1,8 @@
 ﻿using System.Collections.Generic;
+using Core.Extensions;
 using FluentValidation.Results;
 
-namespace Core.Extensions.Core.Extensions
+namespace Core.Extensions
 {
     public class ValidationErrorDetails : ErrorDetails
     {

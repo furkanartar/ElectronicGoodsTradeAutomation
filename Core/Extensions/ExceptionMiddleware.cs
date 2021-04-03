@@ -1,4 +1,4 @@
-﻿using Core.Extensions.Core.Extensions;
+﻿using Core.Extensions;
 using FluentValidation;
 using FluentValidation.Results;
 using Microsoft.AspNetCore.Http;

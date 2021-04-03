@@ -1,4 +1,6 @@
 ﻿using Business.Abstract;
+using Core.Aspects.Autofac.Caching;
+using Core.Aspects.Autofac.Transaction;
 using Entities.Concrete;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +18,8 @@ namespace WebAPI.Controllers
             _productService = productService;
         }
 
-
+        [CacheRemoveAspect("IProductService.Get")]
+        [TransactionScopeAspect]
         [HttpPost("add")]
         public IActionResult Add(Product product)
         {
@@ -29,7 +32,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-
+        [CacheRemoveAspect("IProductService.Get")]
+        [TransactionScopeAspect]
         [HttpPost("update")]
         public IActionResult Update(Product product)
         {
@@ -42,7 +46,8 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-
+        [CacheRemoveAspect("IProductService.Get")]
+        [TransactionScopeAspect]
         [HttpGet("delete")]
         public IActionResult Delete(Product product)
         {
@@ -55,6 +60,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
+        [CacheAspect]
         [Authorize(Roles = "Admin")]
         [HttpGet("getall")]
         public IActionResult GetAll()
@@ -68,7 +74,7 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-
+        [CacheAspect]
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {

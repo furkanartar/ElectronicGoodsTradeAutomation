@@ -2,6 +2,7 @@
 using System;
 using System.Linq;
 using System.Reflection;
+using Core.Aspects.Autofac.Performance;
 
 namespace Core.Utilities.Interceptors
 {
@@ -17,6 +18,7 @@ namespace Core.Utilities.Interceptors
                     .GetCustomAttributes<MethodInterceptionBaseAttribute>(true);
                 classAttributes.AddRange(methodAttributes);
                 //classAttributes.Add(new ExceptionLogAspect(typeof(FileLogger))); --> otomatik olarak isstemdeki bütün metodları loga dahil et.
+                classAttributes.Add(new PerformanceAspect(5));
 
                 return classAttributes.OrderBy(x => x.Priority).ToArray();
             }
