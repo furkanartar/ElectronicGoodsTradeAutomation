@@ -6,20 +6,20 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class EmployeeController : ControllerBase
+    public class SuppliersController : ControllerBase
     {
-        private IEmployeeService _employeeService;
+        private ISupplierService _supplierService;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public SuppliersController(ISupplierService supplierService)
         {
-            _employeeService = employeeService;
+            _supplierService = supplierService;
         }
 
 
         [HttpPost("add")]
-        public IActionResult Add(Employee employee)
+        public IActionResult Add(Supplier supplier)
         {
-            var result = _employeeService.Add(employee);
+            var result = _supplierService.Add(supplier);
             if (result.Success)
             {
                 return Ok(result);
@@ -30,9 +30,9 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult Update(Employee employee)
+        public IActionResult Update(Supplier supplier)
         {
-            var result = _employeeService.Update(employee);
+            var result = _supplierService.Update(supplier);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,9 +43,9 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("delete")]
-        public IActionResult Delete(Employee employee)
+        public IActionResult Delete(Supplier supplier)
         {
-            var result = _employeeService.Delete(employee);
+            var result = _supplierService.Delete(supplier);
             if (result.Success)
             {
                 return Ok(result);
@@ -58,7 +58,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _employeeService.GetAll();
+            var result = _supplierService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _employeeService.GetById(id);
+            var result = _supplierService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);

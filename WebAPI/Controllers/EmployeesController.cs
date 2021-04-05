@@ -1,29 +1,25 @@
 ﻿using Business.Abstract;
-using Core.Aspects.Autofac.Caching;
-using Core.Aspects.Autofac.Transaction;
 using Entities.Concrete;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class EmployeesController : ControllerBase
     {
-        private IProductService _productService;
+        private IEmployeeService _employeeService;
 
-        public ProductController(IProductService productService)
+        public EmployeesController(IEmployeeService employeeService)
         {
-            _productService = productService;
+            _employeeService = employeeService;
         }
 
-        [CacheRemoveAspect("IProductService.Get")]
-        [TransactionScopeAspect]
+
         [HttpPost("add")]
-        public IActionResult Add(Product product)
+        public IActionResult Add(Employee employee)
         {
-            var result = _productService.Add(product);
+            var result = _employeeService.Add(employee);
             if (result.Success)
             {
                 return Ok(result);
@@ -32,12 +28,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [CacheRemoveAspect("IProductService.Get")]
-        [TransactionScopeAspect]
+
         [HttpPost("update")]
-        public IActionResult Update(Product product)
+        public IActionResult Update(Employee employee)
         {
-            var result = _productService.Update(product);
+            var result = _employeeService.Update(employee);
             if (result.Success)
             {
                 return Ok(result);
@@ -46,12 +41,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [CacheRemoveAspect("IProductService.Get")]
-        [TransactionScopeAspect]
+
         [HttpGet("delete")]
-        public IActionResult Delete(Product product)
+        public IActionResult Delete(Employee employee)
         {
-            var result = _productService.Delete(product);
+            var result = _employeeService.Delete(employee);
             if (result.Success)
             {
                 return Ok(result);
@@ -60,12 +54,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [CacheAspect]
-        [Authorize(Roles = "Admin")]
+
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _productService.GetAll();
+            var result = _employeeService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -74,11 +67,11 @@ namespace WebAPI.Controllers
             return BadRequest(result);
         }
 
-        [CacheAspect]
+
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _productService.GetById(id);
+            var result = _employeeService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);

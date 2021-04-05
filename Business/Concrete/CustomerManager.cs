@@ -1,9 +1,13 @@
-﻿using Business.Abstract;
+﻿using System;
+using Business.Abstract;
 using Business.Constants;
 using Core.Utilities.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
 using System.Collections.Generic;
+using System.Linq;
+using Core.Utilities.Business;
+using Core.Utilities.Helper;
 
 namespace Business.Concrete
 {
@@ -24,26 +28,25 @@ namespace Business.Concrete
 
         public IResult Update(Customer customer)
         {
-            var result = _customerDal.Get(c => c.Id == customer.Id);
-            _customerDal.Update(result);
+            _customerDal.Update(customer);
             return new SuccessResult(Messages.Customers.Update(customer.FirstName, customer.LastName));
         }
 
         public IResult Delete(Customer customer)
         {
-            var result = _customerDal.Get(c => c.Id == customer.Id);
-            _customerDal.Delete(result);
-            return new SuccessResult();
+            customer.Enabled = false;
+            _customerDal.Update(customer);
+            return new SuccessResult("Başarıyla silindi.");
         }
 
         public IDataResult<List<Customer>> GetAll()
         {
-            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll());
+            return new SuccessDataResult<List<Customer>>(_customerDal.GetAll().Where(customer => customer.Enabled == true).ToList());
         }
 
         public IDataResult<Customer> GetById(int CustomerId)
         {
-            return new SuccessDataResult<Customer>(_customerDal.Get(c => c.Id == CustomerId));
+            return new SuccessDataResult<Customer>(_customerDal.Get(customer => customer.Id == CustomerId && customer.Enabled == true));
         }
     }
 }

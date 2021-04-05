@@ -6,20 +6,20 @@ namespace WebAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class SupplierController : ControllerBase
+    public class OrdersController : ControllerBase
     {
-        private ISupplierService _supplierService;
+        private IOrderService _orderService;
 
-        public SupplierController(ISupplierService supplierService)
+        public OrdersController(IOrderService orderService)
         {
-            _supplierService = supplierService;
+            _orderService = orderService;
         }
 
 
         [HttpPost("add")]
-        public IActionResult Add(Supplier supplier)
+        public IActionResult Add(Order order)
         {
-            var result = _supplierService.Add(supplier);
+            var result = _orderService.Add(order);
             if (result.Success)
             {
                 return Ok(result);
@@ -30,9 +30,9 @@ namespace WebAPI.Controllers
 
 
         [HttpPost("update")]
-        public IActionResult Update(Supplier supplier)
+        public IActionResult Update(Order order)
         {
-            var result = _supplierService.Update(supplier);
+            var result = _orderService.Update(order);
             if (result.Success)
             {
                 return Ok(result);
@@ -43,9 +43,9 @@ namespace WebAPI.Controllers
 
 
         [HttpGet("delete")]
-        public IActionResult Delete(Supplier supplier)
+        public IActionResult Delete(Order order)
         {
-            var result = _supplierService.Delete(supplier);
+            var result = _orderService.Delete(order);
             if (result.Success)
             {
                 return Ok(result);
@@ -58,7 +58,7 @@ namespace WebAPI.Controllers
         [HttpGet("getall")]
         public IActionResult GetAll()
         {
-            var result = _supplierService.GetAll();
+            var result = _orderService.GetAll();
             if (result.Success)
             {
                 return Ok(result);
@@ -71,7 +71,7 @@ namespace WebAPI.Controllers
         [HttpGet("getbyid")]
         public IActionResult GetById(int id)
         {
-            var result = _supplierService.GetById(id);
+            var result = _orderService.GetById(id);
             if (result.Success)
             {
                 return Ok(result);

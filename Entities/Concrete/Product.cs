@@ -11,5 +11,6 @@ namespace Entities.Concrete
         public short QuantityPerUnit { get; set; }
         public decimal UnitPrice { get; set; }
         public short UnitsInStock { get; set; }
+        public bool Enabled { get; set; }
     }
 }
