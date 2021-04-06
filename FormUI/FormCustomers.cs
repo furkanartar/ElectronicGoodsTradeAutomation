@@ -54,12 +54,38 @@ namespace FormUI
             }
         }
 
-        private void btnCustomerAdd_Click(object sender, EventArgs e)
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedRow = dataGridView1.SelectedCells[0].RowIndex;
+
+            tbxId.Text = dataGridView1.Rows[selectedRow].Cells[0].Value.ToString();
+            tbxFirstName.Text = dataGridView1.Rows[selectedRow].Cells[1].Value.ToString();
+            tbxLastName.Text = dataGridView1.Rows[selectedRow].Cells[2].Value.ToString();
+            tbxNationalIdentity.Text = dataGridView1.Rows[selectedRow].Cells[3].Value.ToString();
+            dtpBirthDate.Text = dataGridView1.Rows[selectedRow].Cells[4].Value.ToString();
+            tbxAdress.Text = dataGridView1.Rows[selectedRow].Cells[5].Value.ToString();
+            tbxPhoneNumber.Text = dataGridView1.Rows[selectedRow].Cells[6].Value.ToString();
+            //tbxPhotoPath.Text = dataGridView1.Rows[selectedRow].Cells[7].Value.ToString();
+        }
+
+        private void btnImagePath_Click(object sender, EventArgs e)
+        {
+            ofdImagePath.ShowDialog();
+            ofdImagePath.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
+            tbxPhotoPath.Text = ofdImagePath.FileName;
+        }
+
+
+        private void btnCustomerAdd_Click_1(object sender, EventArgs e)
         {
             Customer customer = new Customer()
             {
-                FirstName = tbxFirstName.Text, LastName = tbxLastName.Text, BirthDate = dtpBirthDate.Value, Adress = tbxAdress.Text, 
-                NationalIdentity = tbxNationalIdentity.Text, /* PhotoPath = tbxPhotoPath.Text,*/ PhoneNumber = tbxPhoneNumber.Text
+                FirstName = tbxFirstName.Text,
+                LastName = tbxLastName.Text,
+                BirthDate = dtpBirthDate.Value,
+                Adress = tbxAdress.Text,
+                NationalIdentity = tbxNationalIdentity.Text, /* PhotoPath = tbxPhotoPath.Text,*/
+                PhoneNumber = tbxPhoneNumber.Text
             };
 
             var result = _customerService.Add(customer);
@@ -74,7 +100,7 @@ namespace FormUI
             }
         }
 
-        private void btnDelete_Click(object sender, EventArgs e)
+        private void btnDelete_Click_1(object sender, EventArgs e)
         {
             Customer customer = new Customer()
             {
@@ -100,7 +126,7 @@ namespace FormUI
             }
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
+        private void btnUpdate_Click_1(object sender, EventArgs e)
         {
             Customer customer = new Customer()
             {
@@ -123,26 +149,6 @@ namespace FormUI
             {
                 MessageBox.Show(result.Message);
             }
-        }
-        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int selectedRow = dataGridView1.SelectedCells[0].RowIndex;
-
-            tbxId.Text = dataGridView1.Rows[selectedRow].Cells[0].Value.ToString();
-            tbxFirstName.Text = dataGridView1.Rows[selectedRow].Cells[1].Value.ToString();
-            tbxLastName.Text = dataGridView1.Rows[selectedRow].Cells[2].Value.ToString();
-            tbxNationalIdentity.Text = dataGridView1.Rows[selectedRow].Cells[3].Value.ToString();
-            dtpBirthDate.Text = dataGridView1.Rows[selectedRow].Cells[4].Value.ToString();
-            tbxAdress.Text = dataGridView1.Rows[selectedRow].Cells[5].Value.ToString();
-            tbxPhoneNumber.Text = dataGridView1.Rows[selectedRow].Cells[6].Value.ToString();
-            //tbxPhotoPath.Text = dataGridView1.Rows[selectedRow].Cells[7].Value.ToString();
-        }
-
-        private void btnImagePath_Click(object sender, EventArgs e)
-        {
-            ofdImagePath.ShowDialog();
-            ofdImagePath.Filter = "jpg files(.*jpg)|*.jpg| PNG files(.*png)|*.png| All Files(*.*)|*.*";
-            tbxPhotoPath.Text = ofdImagePath.FileName;
         }
     }
 }

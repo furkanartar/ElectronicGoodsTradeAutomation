@@ -16,11 +16,20 @@ namespace Core.Utilities.Security.Jwt
         public IConfiguration Configuration { get; }
         private TokenOptions _tokenOptions;
         private DateTime _accessTokenExpiration;
-        public JwtHelper(IConfiguration configuration)
+        public JwtHelper(/*IConfiguration configuration*/)
         {
-            Configuration = configuration;
-            _tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+            //Configuration = configuration;
+            //_tokenOptions = Configuration.GetSection("TokenOptions").Get<TokenOptions>();
+
+            _tokenOptions = new TokenOptions()
+            {
+                Audience =  "furkan@furkan.com", 
+                Issuer = "furkan@furkan.com", 
+                AccessTokenExpiration = 10,
+                SecurityKey = "mysupersecretkeymysupersecretkeymysupersecretkey"
+            };
         }
+
         public AccessToken CreateToken(User user, List<OperationClaim> operationClaims)
         {
             _accessTokenExpiration = DateTime.Now.AddMinutes(_tokenOptions.AccessTokenExpiration);

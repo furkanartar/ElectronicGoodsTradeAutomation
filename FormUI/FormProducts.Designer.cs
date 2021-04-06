@@ -48,7 +48,6 @@ namespace FormUI
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tbxQuantityPerUnit = new System.Windows.Forms.TextBox();
-            this.btnAddProductToCart = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -94,7 +93,7 @@ namespace FormUI
             // 
             this.btnProductUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductUpdate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnProductUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnProductUpdate.ForeColor = System.Drawing.Color.White;
             this.btnProductUpdate.Image = ((System.Drawing.Image)(resources.GetObject("btnProductUpdate.Image")));
             this.btnProductUpdate.Location = new System.Drawing.Point(324, 60);
             this.btnProductUpdate.Name = "btnProductUpdate";
@@ -109,7 +108,7 @@ namespace FormUI
             // 
             this.btnProductDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnProductDelete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnProductDelete.ForeColor = System.Drawing.Color.White;
             this.btnProductDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnProductDelete.Image")));
             this.btnProductDelete.Location = new System.Drawing.Point(408, 12);
             this.btnProductDelete.Name = "btnProductDelete";
@@ -124,7 +123,7 @@ namespace FormUI
             // 
             this.btnProductAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProductAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnProductAdd.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
+            this.btnProductAdd.ForeColor = System.Drawing.Color.White;
             this.btnProductAdd.Image = ((System.Drawing.Image)(resources.GetObject("btnProductAdd.Image")));
             this.btnProductAdd.Location = new System.Drawing.Point(324, 12);
             this.btnProductAdd.Name = "btnProductAdd";
@@ -261,28 +260,12 @@ namespace FormUI
             this.tbxQuantityPerUnit.Size = new System.Drawing.Size(148, 16);
             this.tbxQuantityPerUnit.TabIndex = 42;
             // 
-            // btnAddProductToCart
-            // 
-            this.btnAddProductToCart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAddProductToCart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAddProductToCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(176)))));
-            this.btnAddProductToCart.Image = ((System.Drawing.Image)(resources.GetObject("btnAddProductToCart.Image")));
-            this.btnAddProductToCart.Location = new System.Drawing.Point(611, 109);
-            this.btnAddProductToCart.Name = "btnAddProductToCart";
-            this.btnAddProductToCart.Size = new System.Drawing.Size(118, 51);
-            this.btnAddProductToCart.TabIndex = 43;
-            this.btnAddProductToCart.Text = "Sepete Ekle";
-            this.btnAddProductToCart.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAddProductToCart.UseVisualStyleBackColor = true;
-            this.btnAddProductToCart.Click += new System.EventHandler(this.btnAddProductToCart_Click);
-            // 
             // FormProducts
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(51)))), ((int)(((byte)(73)))));
             this.ClientSize = new System.Drawing.Size(741, 494);
-            this.Controls.Add(this.btnAddProductToCart);
             this.Controls.Add(this.tbxQuantityPerUnit);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tbxId);
@@ -332,6 +315,5 @@ namespace FormUI
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbxQuantityPerUnit;
-        private System.Windows.Forms.Button btnAddProductToCart;
     }
 }

@@ -17,14 +17,12 @@ namespace FormUI
     public partial class FormProducts : Form
     {
         private IProductService _productService;
-        private ICartService _cartService;
 
         public FormProducts()
         {
             InitializeComponent();
             //_productManager = ServiceTool.ServiceProvider.GetService<IProductService>();
             _productService = new ProductManager(new EfProductDal());
-            _cartService = new CartManager();
         }
 
         private void FormProducts_Load(object sender, EventArgs e)
@@ -139,22 +137,6 @@ namespace FormUI
             tbxQuantityPerUnit.Text = dataGridView1.Rows[selectedRow].Cells[4].Value.ToString();
             tbxUnitPrice.Text = dataGridView1.Rows[selectedRow].Cells[5].Value.ToString();
             tbxUnitsInStock.Text = dataGridView1.Rows[selectedRow].Cells[6].Value.ToString();
-        }
-
-        private void btnAddProductToCart_Click(object sender, EventArgs e)
-        {
-            Product product = new Product()
-            {
-                Id = int.Parse(tbxId.Text),
-                ProductName = tbxProductName.Text,
-                CategoryId = Int16.Parse(tbxCategoryId.Text),
-                SupplierId = Int16.Parse(tbxSupplierId.Text),
-                QuantityPerUnit = Int16.Parse(tbxQuantityPerUnit.Text),
-                UnitPrice = decimal.Parse(tbxUnitPrice.Text),
-                UnitsInStock = Int16.Parse(tbxUnitsInStock.Text)
-            };
-
-            _cartService.AddToCartItem(product);
         }
     }
 }

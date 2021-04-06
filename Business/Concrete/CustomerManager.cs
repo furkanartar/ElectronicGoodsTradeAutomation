@@ -22,12 +22,14 @@ namespace Business.Concrete
 
         public IResult Add(Customer customer)
         {
+            customer.Enabled = true;
             _customerDal.Add(customer);
             return new SuccessResult(Messages.Customers.Add(customer.FirstName, customer.LastName));
         }
 
         public IResult Update(Customer customer)
         {
+            customer.Enabled = true;
             _customerDal.Update(customer);
             return new SuccessResult(Messages.Customers.Update(customer.FirstName, customer.LastName));
         }

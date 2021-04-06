@@ -10,21 +10,16 @@ namespace Business.Concrete
 {
     public class CartManager : ICartService
     {
-        //private List<Cart> _cart;
+        public List<Cart> _carts { get; set; }
 
-        private List<Cart> _cart = new List<Cart>
+        public CartManager()
         {
-            new Cart
-            {
-                Product = new Product() {Id = 5, ProductName = "Tset"},
-                Quantity = 1
-            }
-
-        };
+            _carts = new List<Cart>();
+        }
 
         public IResult AddToCartItem(Product product)
         {
-            var item = _cart.Where(item => item.Product.Id == product.Id).FirstOrDefault();
+            var item = _carts.Where(item => item.Product.Id == product.Id).FirstOrDefault();
 
             if (item != null)
             {
@@ -32,7 +27,7 @@ namespace Business.Concrete
             }
             else
             {
-                _cart.Add(new Cart() { Product = product, Quantity = 1 });
+                _carts.Add(new Cart() { Product = product, Quantity = 1 });
             }
 
             return new SuccessResult("Sepete eklendi");
@@ -40,15 +35,14 @@ namespace Business.Concrete
 
         public IResult RemoveToCartItem(Product product)
         {
-            var item = _cart.Where(item => item.Product.Id == product.Id).First();
-            _cart.Remove(item);
+            var item = _carts.Where(item => item.Product.Id == product.Id).First();
+            _carts.Remove(item);
             return new SuccessResult("Sepetten çıkarıldı");
         }
 
         public IDataResult<List<Cart>> GetCart()
         {
-            var cart = _cart;
-            return new SuccessDataResult<List<Cart>>(cart);
+            return new SuccessDataResult<List<Cart>>(_carts);
         }
     }
 }

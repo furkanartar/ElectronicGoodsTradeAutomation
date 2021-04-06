@@ -49,32 +49,10 @@ namespace FormUI
         {
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//HttpClientHandler clientHandler = new HttpClientHandler();
-//clientHandler.ServerCertificateCustomValidationCallback = (sender, cert, chain, sslPolicyErrors) => { return true; };
-//HttpClient client = new HttpClient(clientHandler);
-//client.BaseAddress = new Uri("https://localhost:44394/api/");
-//HttpResponseMessage response = await client.GetAsync("products/getall");
-//string rawResponse = await response.Content.ReadAsStringAsync();
-////object items = JsonConvert.DeserializeObject<object>(rawResponse);
-//var items = JsonSerializer.Deserialize<DataResult<List<Product>>>(rawResponse);
-
-//label1.Text = "";

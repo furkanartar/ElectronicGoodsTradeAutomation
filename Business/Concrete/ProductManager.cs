@@ -29,6 +29,7 @@ namespace Business.Concrete
                 return result;
             }
 
+            product.Enabled = true;
             _productDal.Add(product);
             return new SuccessResult(Messages.Products.Add(product.ProductName));
         }
@@ -36,6 +37,7 @@ namespace Business.Concrete
         //[CacheRemoveAspect("IProductService.Get")]
         public IResult Update(Product product)
         {
+            product.Enabled = true;
             _productDal.Update(product);
             return new SuccessResult(Messages.Products.Update(product.ProductName));
         }
@@ -51,13 +53,13 @@ namespace Business.Concrete
         //[CacheAspect]
         public IDataResult<List<Product>> GetAll()
         {
-            return new SuccessDataResult<List<Product>>(_productDal.GetAll().Where(product =>product.Enabled == false).ToList(), "İşlem başarılı");
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll().Where(product =>product.Enabled == true).ToList(), "İşlem başarılı");
         }
 
         //[CacheAspect]
         public IDataResult<Product> GetById(int ProductId)
         {
-            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == ProductId && p.Enabled == false));
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.Id == ProductId && p.Enabled == true));
         }
     }
 }

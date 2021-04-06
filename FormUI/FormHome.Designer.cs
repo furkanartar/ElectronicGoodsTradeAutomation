@@ -38,13 +38,12 @@ namespace FormUI
             this.lblUserName = new System.Windows.Forms.Label();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.btnDashboard = new System.Windows.Forms.Button();
-            this.btnAnalytics = new System.Windows.Forms.Button();
             this.btnOrders = new System.Windows.Forms.Button();
             this.btnContactUs = new System.Windows.Forms.Button();
             this.btnProducts = new System.Windows.Forms.Button();
             this.pnlLeft = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlFormLoader = new System.Windows.Forms.Panel();
-            this.btnCartSummary = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.pnlLeft.SuspendLayout();
@@ -100,22 +99,22 @@ namespace FormUI
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 6.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(158)))), ((int)(((byte)(161)))), ((int)(((byte)(178)))));
-            this.label3.Location = new System.Drawing.Point(36, 111);
+            this.label3.Location = new System.Drawing.Point(59, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(112, 12);
+            this.label3.Size = new System.Drawing.Size(68, 12);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Some User Text Here";
+            this.label3.Text = "Hoşgeldiniz!";
             // 
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
             this.lblUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.lblUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(156)))), ((int)(((byte)(149)))));
-            this.lblUserName.Location = new System.Drawing.Point(48, 91);
+            this.lblUserName.Location = new System.Drawing.Point(46, 91);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(88, 17);
+            this.lblUserName.Size = new System.Drawing.Size(97, 17);
             this.lblUserName.TabIndex = 1;
-            this.lblUserName.Text = "User Name";
+            this.lblUserName.Text = "Kullanıcı Adı";
             // 
             // pictureBox
             // 
@@ -144,32 +143,16 @@ namespace FormUI
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
             this.btnDashboard.Leave += new System.EventHandler(this.btnDashboard_Leave);
             // 
-            // btnAnalytics
-            // 
-            this.btnAnalytics.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAnalytics.FlatAppearance.BorderSize = 0;
-            this.btnAnalytics.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnalytics.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnAnalytics.Image = ((System.Drawing.Image)(resources.GetObject("btnAnalytics.Image")));
-            this.btnAnalytics.Location = new System.Drawing.Point(0, 186);
-            this.btnAnalytics.Name = "btnAnalytics";
-            this.btnAnalytics.Size = new System.Drawing.Size(180, 42);
-            this.btnAnalytics.TabIndex = 5;
-            this.btnAnalytics.Text = "Analizler";
-            this.btnAnalytics.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAnalytics.UseVisualStyleBackColor = true;
-            this.btnAnalytics.Click += new System.EventHandler(this.btnAnalytics_Click);
-            this.btnAnalytics.Leave += new System.EventHandler(this.btnAnalytics_Leave);
-            // 
             // btnOrders
             // 
+            this.btnOrders.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnOrders.FlatAppearance.BorderSize = 0;
             this.btnOrders.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnOrders.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnOrders.Image = ((System.Drawing.Image)(resources.GetObject("btnOrders.Image")));
-            this.btnOrders.Location = new System.Drawing.Point(0, 324);
+            this.btnOrders.Location = new System.Drawing.Point(0, 186);
             this.btnOrders.Name = "btnOrders";
-            this.btnOrders.Size = new System.Drawing.Size(186, 42);
+            this.btnOrders.Size = new System.Drawing.Size(180, 42);
             this.btnOrders.TabIndex = 6;
             this.btnOrders.Text = "Satışlar";
             this.btnOrders.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -179,13 +162,14 @@ namespace FormUI
             // 
             // btnContactUs
             // 
+            this.btnContactUs.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnContactUs.FlatAppearance.BorderSize = 0;
             this.btnContactUs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnContactUs.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnContactUs.Image = ((System.Drawing.Image)(resources.GetObject("btnContactUs.Image")));
-            this.btnContactUs.Location = new System.Drawing.Point(0, 276);
+            this.btnContactUs.Location = new System.Drawing.Point(0, 228);
             this.btnContactUs.Name = "btnContactUs";
-            this.btnContactUs.Size = new System.Drawing.Size(186, 42);
+            this.btnContactUs.Size = new System.Drawing.Size(180, 42);
             this.btnContactUs.TabIndex = 7;
             this.btnContactUs.Text = "Müşteriler";
             this.btnContactUs.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -200,7 +184,7 @@ namespace FormUI
             this.btnProducts.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProducts.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.btnProducts.Image = ((System.Drawing.Image)(resources.GetObject("btnProducts.Image")));
-            this.btnProducts.Location = new System.Drawing.Point(0, 228);
+            this.btnProducts.Location = new System.Drawing.Point(0, 270);
             this.btnProducts.Name = "btnProducts";
             this.btnProducts.Size = new System.Drawing.Size(180, 42);
             this.btnProducts.TabIndex = 9;
@@ -213,11 +197,10 @@ namespace FormUI
             // pnlLeft
             // 
             this.pnlLeft.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(30)))), ((int)(((byte)(54)))));
-            this.pnlLeft.Controls.Add(this.btnCartSummary);
+            this.pnlLeft.Controls.Add(this.button1);
             this.pnlLeft.Controls.Add(this.btnProducts);
             this.pnlLeft.Controls.Add(this.btnContactUs);
             this.pnlLeft.Controls.Add(this.btnOrders);
-            this.pnlLeft.Controls.Add(this.btnAnalytics);
             this.pnlLeft.Controls.Add(this.btnDashboard);
             this.pnlLeft.Controls.Add(this.panel1);
             this.pnlLeft.Dock = System.Windows.Forms.DockStyle.Left;
@@ -227,6 +210,23 @@ namespace FormUI
             this.pnlLeft.Size = new System.Drawing.Size(180, 552);
             this.pnlLeft.TabIndex = 2;
             // 
+            // button1
+            // 
+            this.button1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(0, 312);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(180, 42);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Satış";
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Leave += new System.EventHandler(this.button1_Leave);
+            // 
             // pnlFormLoader
             // 
             this.pnlFormLoader.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -234,21 +234,6 @@ namespace FormUI
             this.pnlFormLoader.Name = "pnlFormLoader";
             this.pnlFormLoader.Size = new System.Drawing.Size(739, 494);
             this.pnlFormLoader.TabIndex = 13;
-            // 
-            // btnCartSummary
-            // 
-            this.btnCartSummary.FlatAppearance.BorderSize = 0;
-            this.btnCartSummary.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCartSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.btnCartSummary.Image = ((System.Drawing.Image)(resources.GetObject("btnCartSummary.Image")));
-            this.btnCartSummary.Location = new System.Drawing.Point(0, 510);
-            this.btnCartSummary.Name = "btnCartSummary";
-            this.btnCartSummary.Size = new System.Drawing.Size(186, 42);
-            this.btnCartSummary.TabIndex = 10;
-            this.btnCartSummary.Text = "Sepet";
-            this.btnCartSummary.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCartSummary.UseVisualStyleBackColor = true;
-            this.btnCartSummary.Click += new System.EventHandler(this.btnCartSummary_Click);
             // 
             // FormHome
             // 
@@ -284,13 +269,12 @@ namespace FormUI
         private System.Windows.Forms.Label lblUserName;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button btnDashboard;
-        private System.Windows.Forms.Button btnAnalytics;
         private System.Windows.Forms.Button btnOrders;
         private System.Windows.Forms.Button btnContactUs;
         private System.Windows.Forms.Button btnProducts;
         private System.Windows.Forms.Panel pnlLeft;
         private System.Windows.Forms.Panel pnlFormLoader;
-        private System.Windows.Forms.Button btnCartSummary;
+        private System.Windows.Forms.Button button1;
     }
 }
 
